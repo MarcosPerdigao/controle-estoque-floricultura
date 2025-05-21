@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #a8e6cf, #56ab2f);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 5px;
+}
+
+input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.4);
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.salvar {
+  background-color: #43a047;
+}
+button.salvar:hover {
+  background-color: #2e7d32;
+}
+
+button.editar {
+  background-color: #8bc34a;
+}
+button.editar:hover {
+  background-color: #689f38;
+}
+
+button.excluir {
+  background-color: #ef5350;
+}
+button.excluir:hover {
+  background-color: #c62828;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #c8e6c9; /* verde suave */
+  color: #2e7d32; /* verde escuro no texto */
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #81c784;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.qtd-baixa {
+  color: red;
+  font-weight: bold;
+}
+
+.rodape {
+  margin-top: 30px;
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+}
