@@ -9,6 +9,7 @@ function App() {
   const [quantidade, setQuantidade] = useState('');
   const [preco, setPreco] = useState('');
   const [editId, setEditId] = useState(null);
+  const [mostrarSobre, setMostrarSobre] = useState(false);
 
   const api = axios.create({ baseURL: 'http://localhost:3001' });
 
@@ -75,13 +76,14 @@ function App() {
     }
   };
 
+  const toggleSobre = () => {
+    setMostrarSobre(!mostrarSobre);
+  };
+
   return (
     <div className="container">
       <h1>
-        <span role="img" aria-label="folha">
-          🌿
-        </span>{' '}
-        Verde em Vários Tons
+        <img src="/logo.png" alt="" className="logoimg" /> Ateliê da Tia Deia - Controle de Estoque
       </h1>
 
       <div style={{ marginBottom: 20 }}>
@@ -127,7 +129,7 @@ function App() {
           {produtos.map((p) => (
             <tr key={p.id}>
               <td>{p.nome}</td>
-              <td className={p.quantidade < 5 ? 'qtd-baixa' : ''}>{p.quantidade}</td>
+              <td className={p.quantidade < 4 ? 'qtd-baixa' : ''}>{p.quantidade}</td>
               <td>
                 {Number(p.preco).toLocaleString('pt-BR', {
                   style: 'currency',
@@ -151,10 +153,30 @@ function App() {
         </tbody>
       </table>
 
+      {mostrarSobre && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleSobre}>&times;</span>
+            <h2>Sobre o Sistema</h2>
+            <p>Este sistema foi desenvolvido para facilitar o controle de estoque do <strong>Ateliê da Tia Deia</strong>.
+              <p>Através dele, é possível adicionar, editar e remover produtos, além de visualizar rapidamente os itens com quantidade baixa.</p>
+            </p>
+            <p>
+              O objetivo é proporcionar praticidade no gerenciamento de produtos artesanais, ajudando a manter a organização e o controle das vendas e da produção.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <button onClick={toggleSobre} className="btn-sobre">
+        Sobre
+      </button>
+
       <footer className="rodape">
         <p>
-          Desenvolvido para <strong>Verde em Vários Tons</strong>
+          Desenvolvido por <a href='https://github.com/MarcosPerdigao' className="personNames">Marcos Perdigão</a> & <a href="https://github.com/bielwdev" className="personNames">Gabriel Victor </a>para <a href="https://www.instagram.com/ateliedatiadeia/" className="personNames">Ateliê da Tia Deia</a>
         </p>
+        <p>Andrea Cristina de Oliveira Pires dos Santos - 27.504.827/0001-99</p>
       </footer>
     </div>
   );
