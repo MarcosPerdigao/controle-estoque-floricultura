@@ -9,6 +9,7 @@ function App() {
   const [quantidade, setQuantidade] = useState('');
   const [preco, setPreco] = useState('');
   const [editId, setEditId] = useState(null);
+  const [mostrarSobre, setMostrarSobre] = useState(false);
 
   const api = axios.create({ baseURL: 'http://localhost:3001' });
 
@@ -73,6 +74,10 @@ function App() {
         alert('Erro ao deletar produto');
       }
     }
+  };
+
+  const toggleSobre = () => {
+    setMostrarSobre(!mostrarSobre);
   };
 
   return (
@@ -147,6 +152,25 @@ function App() {
           ))}
         </tbody>
       </table>
+
+      {mostrarSobre && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleSobre}>&times;</span>
+            <h2>Sobre o Sistema</h2>
+            <p>Este sistema foi desenvolvido para facilitar o controle de estoque do <strong>Ateliê da Tia Deia</strong>.
+              <p>Através dele, é possível adicionar, editar e remover produtos, além de visualizar rapidamente os itens com quantidade baixa.</p>
+            </p>
+            <p>
+              O objetivo é proporcionar praticidade no gerenciamento de produtos artesanais, ajudando a manter a organização e o controle das vendas e da produção.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <button onClick={toggleSobre} className="btn-sobre">
+        Sobre
+      </button>
 
       <footer className="rodape">
         <p>
