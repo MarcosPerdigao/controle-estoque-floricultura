@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #a8e6cf, #56ab2f);
+  background: linear-gradient(135deg, #c7a4aa, #a2273b);
   min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #2e7d32;
+  color: #a2273b;
   font-size: 26px;
   margin-bottom: 25px;
 }
@@ -30,7 +30,7 @@ input {
 }
 
 input:focus {
-  border-color: #4caf50;
+  border-color: #a2273b;
   box-shadow: 0 0 4px rgba(76, 175, 80, 0.4);
 }
 
@@ -45,10 +45,10 @@ button {
 }
 
 button.salvar {
-  background-color: #43a047;
+  background-color: #a2273b;
 }
 button.salvar:hover {
-  background-color: #2e7d32;
+  background-color: #641926;
 }
 
 button.editar {
@@ -72,12 +72,12 @@ table {
 }
 
 th {
-  background-color: #c8e6c9; /* verde suave */
-  color: #2e7d32; /* verde escuro no texto */
+  background-color: #fcb9c4; /* verde suave */
+  color: #a2273b; /* verde escuro no texto */
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  border-bottom: 2px solid #81c784;
+  border-bottom: 2px solid #c07884;
 }
 
 td {
@@ -92,8 +92,25 @@ td {
 }
 
 .rodape {
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 13px;
   text-align: center;
   color: #555;
+}
+
+.personNames {
+  font-weight: 700;
+  text-decoration: none;
+  color: #a2273b;
+}
+
+.personNames:hover {
+  color: #641926;
+}
+
+.logoimg {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: -80px auto auto;
 }

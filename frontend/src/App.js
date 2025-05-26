@@ -78,10 +78,7 @@ function App() {
   return (
     <div className="container">
       <h1>
-        <span role="img" aria-label="folha">
-          🌿
-        </span>{' '}
-        Verde em Vários Tons
+        <img src="/logo.png" alt="" className="logoimg" /> Ateliê da Tia Deia - Controle de Estoque
       </h1>
 
       <div style={{ marginBottom: 20 }}>
@@ -127,7 +124,7 @@ function App() {
           {produtos.map((p) => (
             <tr key={p.id}>
               <td>{p.nome}</td>
-              <td className={p.quantidade < 5 ? 'qtd-baixa' : ''}>{p.quantidade}</td>
+              <td className={p.quantidade < 4 ? 'qtd-baixa' : ''}>{p.quantidade}</td>
               <td>
                 {Number(p.preco).toLocaleString('pt-BR', {
                   style: 'currency',
@@ -153,8 +150,9 @@ function App() {
 
       <footer className="rodape">
         <p>
-          Desenvolvido para <strong>Verde em Vários Tons</strong>
+          Desenvolvido por <a href='https://github.com/MarcosPerdigao' className="personNames">Marcos Perdigão</a> & <a href="https://github.com/bielwdev" className="personNames">Gabriel Victor </a>para <a href="https://www.instagram.com/ateliedatiadeia/" className="personNames">Ateliê da Tia Deia</a>
         </p>
+        <p>Andrea Cristina de Oliveira Pires dos Santos - 27.504.827/0001-99</p>
       </footer>
     </div>
   );
