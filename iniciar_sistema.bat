@@ -1,5 +1,5 @@
 @echo off
-title Iniciando sistema Verde em Vários Tons
+title Iniciando sistema Ateliê da Tia Deia
 
 start cmd /k "cd backend && node server.js"
 timeout /t 2 >nul
